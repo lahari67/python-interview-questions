@@ -25,6 +25,11 @@ What is the use of help() and dir() functions?
 Are access specifiers used in python?
 How will you check if a class is a child of another class or instance of class?
 How do you create and use a virtual environment?
+What are Access Specifiers in Python?
+What is the difference between @classmethod, @staticmethod and instance methods in Python?
+What are Pickling and Unpickling?
+What is a context manager in Python?
+What is the difference between dict.get() and indexing dict[key]?
 
 What is a dynamically typed language?
         A dynamically typed language is a programming language in which the data type of a variable is determined at runtime. In Python, you do not need to declare the data            type of a variable explicitly. Instead, Python automatically assigns the appropriate type based on the value stored in the variable.
@@ -199,5 +204,40 @@ How do you create and use a virtual environment?
                 python3 -m venv env
         you can activate by navigatiing to the folder src/env/bin and the run activate command
 
-What are Decorators?
-How is memory management done in Python?
+What are Access Specifiers in Python?
+        there are 3 types of access specifiers in python.
+        public these can be accessed any where
+        protected these are intended to accessed only by class members or subclass members . these are declared with _
+        private these should  be strictly accessed by class members only. direct access can be done by name mangling.
+
+What is the difference between @classmethod, @staticmethod and instance methods in Python?
+        @instancemethod: Operates on an instance of a class and has access to instance attributes. Always takes self as fist parameter
+        @classmethod: works with class and takes cls as first parameter. it is defined using @classmethod
+        @staticmethod: doesnot access class or instances attributes. mainly used for utility functions.
+        class and static methods can be access used className. No Object creation is required.
+
+what are decorator ?
+        decorators it tells the  how the function or class would behave with out changing the source code.
+
+How memory management is done in python
+        All objects and data structures are stored in a private heap.
+        The Python interpreter manages memory allocation automatically.
+        Programmers do not access the private heap directly.
+        Python uses garbage collection to free unused memory.
+
+What are Pickling and Unpickling?
+        pickling : the process of converting python object to bytestream. this can be used stored in a file and used to send over network. this can be done using pickle.dump()
+        unpickling: the process of retrieving byte stream to python object. this can be done using pickle.load()
+
+What is a context manager in Python?
+        A context manager is used to manage resources like files, database connections, or locks.
+        It makes sure things are properly opened and closed.You use it with the with keyword.
+        It runs setup code when entering and cleanup code when exiting.
+        This avoids bugs like forgetting to close a file.It keeps code clean and safe.
+
+What is the difference between dict.get() and indexing dict[key]?
+        Using dict[key] throws an error if the key is missing, while dict.get(key) returns None or a default value, this is useful when you are not sure if a key exists, so get() is safer in scripts, while indexing is good when the key must be present.
+        d = {"a": 1}
+        print(d.get("b"))        # None
+        print(d.get("b", 0))     # 0
+        # print(d["b"])          # KeyErro
