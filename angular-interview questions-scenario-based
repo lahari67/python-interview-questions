@@ -1,0 +1,20 @@
+Explain the rendering process in Angular (change detection )
+  Angular rendering process is depends on change detection. when an event,API response, timer, or observable updates the data, the component marked to be verified. angular runs the change detection cyle and compares new value with previous values.
+by default it will check every component in the component tree. but for better performances we will use onpush mechanism, trackb and async pipe to reduce unnecessary checks.
+
+
+Best Practices for API Integration with Error Handling in Angular Application?
+       i follow service based architechecture and use http client calls for rest api integration with strongly typed models.
+    i will also implement http interceptors for modifying the headers to reduce the duplication code. i prefer to use centrailized error handling through interceptors. use retry mechanisim for any network failure options. errors can be handled by rxjs operator Error block which can be used inside subscribe. ensure accessibility by anouncing errors through aria-live regions.
+
+What Have You Done to Improve the Performance of Your Angular Application?
+          i will analyse the application, and check for unnecessary rendering happening. if so i can use Onpush mechanism
+    and also check template expressions in any loops so that for small change, these executions will perform every time so i will reduce that part 
+i will make sure we are using @for or track by function in ngfor loop
+i will ensure to use lazy loading features
+optimize images & static assets
+using standalone when ever is required
+
+
+https://medium.com/@apporvaarya/angular-interview-question-series-learn-what-really-gets-asked-fa36b56d5e72
+
