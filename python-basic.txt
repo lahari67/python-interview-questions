@@ -30,6 +30,8 @@ What is the difference between @classmethod, @staticmethod and instance methods 
 What are Pickling and Unpickling?
 What is a context manager in Python?
 What is the difference between dict.get() and indexing dict[key]?
+What is inheritance ?
+what is python iterator?
 
 What is a dynamically typed language?
         A dynamically typed language is a programming language in which the data type of a variable is determined at runtime. In Python, you do not need to declare the data            type of a variable explicitly. Instead, Python automatically assigns the appropriate type based on the value stored in the variable.
@@ -217,7 +219,8 @@ What is the difference between @classmethod, @staticmethod and instance methods 
         class and static methods can be access used className. No Object creation is required.
 
 what are decorator ?
-        decorators it tells the  how the function or class would behave with out changing the source code.
+       it is a way to modify or extend the behaviour of an function with out actually modifying the code.
+a function takes another function as an argument and retuns a new function based on that with enhanced facilities.
 
 How memory management is done in python
         All objects and data structures are stored in a private heap.
@@ -241,3 +244,33 @@ What is the difference between dict.get() and indexing dict[key]?
         print(d.get("b"))        # None
         print(d.get("b", 0))     # 0
         # print(d["b"])          # KeyErro
+
+What is Inheritance?
+        it allows the child class to access its parent class data and methods.  Parent class should be passed as parameter to child class.
+
+what is python iterator?
+        An iterator is an object that can be iterated up on and traverse through all the elements.
+        it can contains two methods
+        iter and next
+                iter is a function which returns a iterator object itself for iterable things.
+        	next is a function which allows you to do operations and must return the next item in the sequen
+
+What is stop Iteration?
+        	we can raise stopIteration error if iteration reached a terminating condition in next method
+
+Difference between iterator and generator.
+	you need to create a class with iter and next methods and manually raise stopIteration method to when out of items.
+	eliminates all the boiler plate and simply replaces return with yield. 
+	python treats the function as generator that pauses its state every time a value is requested
+	
+	A generator is initialized as a function, whereas an iterator requires writing a class. Therefore generators are not only easier to implement but also increase our code’s readability.
+	
+		Iterators are useful when we need to extend any object that needs to be iterated over. Or if we need a class that has complex state management and other methods. Otherwise, for the majority of cases, a generator is suited.
+
+abstraction
+	show the necessary functionality and hiding the complex logic or unnecessary code.
+	must be decorated with @abstraction.
+
+Enumerate 
+	it is a built in function which is used in for loop that returns a list of tuples which contains  a counterindex and its value.
+	
